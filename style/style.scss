@@ -1,0 +1,257 @@
+$themeColor: rgba(152, 57, 255, 0.5);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+body {
+  position: relative;
+  img.fixed-image {
+    min-height: 100vh;
+    position: fixed;
+    width: 100%;
+    z-index: -5;
+    bottom: 0;
+    left: 0;
+  }
+
+  header {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    // position: sticky;
+    // top: 0;
+    // z-index: 10;
+
+    section.logo {
+      // border: 2px solid green;
+      display: flex;
+      font-size: 1.5rem;
+      flex: 2 1 400px;
+      align-items: center;
+      img {
+        width: 6vw;
+        height: 6vw;
+      }
+    }
+    nav {
+      flex: 5 1 500px;
+      ul {
+        display: flex;
+        list-style-type: none;
+        justify-content: space-around;
+        li {
+          a {
+            color: black;
+            text-decoration: none;
+            font-size: 1.35rem;
+            transition: all 0.2s ease;
+            &:hover {
+              // color: green;
+              // transition-duration: 1s;
+              // transition-timing-function: ease-in;
+              // text-decoration: underline;
+              color: $themeColor;
+              border-bottom: 3px solid $themeColor;
+            }
+          }
+        }
+      }
+      // border: 2px solid red;
+    }
+  }
+
+  main {
+    section.background-img {
+      // border: 3px solid black;
+      //设定背景图片
+      min-height: 70vh;
+      background-image: url("../images/日本櫻花.jpg");
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      transition: all 0.75s ease;
+      z-index: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      div.filter {
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        min-height: 70vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+
+      h3 {
+        text-align: center;
+        color: white;
+        font-size: 2.5rem;
+      }
+    }
+
+    section.info-circles {
+      background-color: white;
+      padding: 2rem 1rem;
+      h2 {
+        font-size: 2rem;
+        text-align: center;
+      }
+      div.circles {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        div.circle {
+          padding: 1rem;
+          flex: 0 1 250px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          img {
+            width: 80%;
+            border-radius: 50%;
+            //   transition: all 0.1s ease-in;
+            padding: 0.3rem;
+            &:hover {
+              transform: scale(0.95);
+              transition: all 0.3s;
+              border: 3px solid $themeColor;
+            }
+            // //  &:hover{
+            //     border: 3px solid $themeColor;
+            //     transition: all 0.1s ease-in;
+            // }
+          }
+        }
+      }
+    }
+
+    section.empty-container {
+      min-height: 70vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      h3 {
+        font-size: 2.5rem;
+        color: white;
+      }
+    }
+  }
+
+  section.google-map {
+    background-color: white;
+    h3 {
+      text-align: center;
+      font-size: 2rem;
+      padding: 2rem 1rem;
+    }
+    p {
+      font-size: 1.25rem;
+      text-align: center;
+    }
+    iframe {
+      width: 100%;
+      height: 40vh;
+    }
+  }
+
+  footer {
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    h1 {
+      color: white;
+      font-size: 2.5rem;
+    }
+    section.logo {
+      img {
+        width: 15vw;
+      }
+    }
+    section.links {
+      padding-top: 2rem;
+      a {
+        img {
+          width: 5vh;
+          margin: 0 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    header {
+      section.logo {
+        flex-direction: column;
+        img {
+          width: 50vw;
+          height: 50vw;
+        }
+      }
+      nav {
+        ul {
+          flex-direction: column;
+          li {
+            padding: 0.5rem 0.25rem;
+          }
+        }
+      }
+    }
+    footer {
+      section.logo {
+        flex-direction: column;
+        img {
+          width: 50vw;
+          height: 50vw;
+        }
+      }
+    }
+  }
+}
+
+// 滑杆样式
+// /* width */
+// ::-webkit-scrollbar {
+//   width: 5px;
+// }
+
+// /* Track */
+// ::-webkit-scrollbar-track {
+//   background: black;
+// }
+
+// /* Handle */
+// ::-webkit-scrollbar-thumb {
+//   background: red;
+// }
+
+// /* Handle on hover */
+// ::-webkit-scrollbar-thumb:hover {
+//   background: blue;
+// }
